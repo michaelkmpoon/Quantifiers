@@ -8,11 +8,35 @@
 
     <EditText
         android:id="@+id/Welcome"
-        android:layout_width="293dp"
+        android:layout_width="320dp"
         android:layout_height="76dp"
         android:ems="40"
-        android:inputType="textPersonName"
+        android:inputType="text|textPersonName"
         android:text='@string/title_home_welcome'
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="148dp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/button_to_instructions"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/Welcome"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="160dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/button_to_game_modes"
+        app:layout_constraintEnd_toEndOf="@+id/Welcome"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome" />
 </android.support.constraint.ConstraintLayout>
