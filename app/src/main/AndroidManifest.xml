@@ -6,6 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".Quantifiers"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/QuantifierTheme">
@@ -20,9 +21,6 @@
         <activity android:name=".GameMode" />
         <activity android:name=".Game" />
         <activity android:name=".EndGame" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
         <activity android:name=".Highscore" />
         <activity android:name=".HowToPlay" />
         <activity android:name=".HowToPlayClassic" />
