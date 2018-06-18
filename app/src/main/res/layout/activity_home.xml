@@ -12,31 +12,44 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginRight="3dp"
+        android:layout_marginStart="3dp"
+        android:onClick="goToHowToPlay"
         app:layout_constraintEnd_toStartOf="@+id/game_modes_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/how_to_play"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintTop_toTopOf="@+id/game_modes_button"
+        app:srcCompat="@mipmap/how_to_play" />
 
     <ImageView
         android:id="@+id/game_modes_button"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_marginBottom="65dp"
         android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="100dp"
+        android:onClick="goToGameMode"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/instructions_button"
-        app:srcCompat="@mipmap/game_modes"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_to_quantifiers"
+        app:srcCompat="@mipmap/game_modes" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/welcome_to_quantifiers"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/welcome_title"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="158dp" />
+        android:layout_height="140dp"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/welcome_to_quantifiers" />
 
 </android.support.constraint.ConstraintLayout>
