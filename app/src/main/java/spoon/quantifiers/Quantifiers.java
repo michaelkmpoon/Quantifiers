@@ -9,7 +9,6 @@ public class Quantifiers extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        FontsOverride.setDefaultFont(this, "DEFAULT", "Futura Medium.ttf");
     }
 }
 

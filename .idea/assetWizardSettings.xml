@@ -18,12 +18,23 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="trimmed" value="true" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundImage">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="130" />
+                                                <entry key="scalingPercent" value="105" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -36,10 +47,10 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="fafafa" />
-                                      <entry key="backgroundImage" value="C:\Users\Samantha\Downloads\welcome_to_quantifiers.jpg" />
-                                      <entry key="foregroundImage" value="C:\Users\Samantha\Desktop\Quantifiers\images\welcome_to_quantifiers.jpg" />
-                                      <entry key="outputName" value="welcome" />
-                                      <entry key="previewDensity" value="XXHIGH" />
+                                      <entry key="backgroundImage" value="C:\Users\Samantha\Desktop\Quantifiers\images\welcome_to_quantifiers.jpg" />
+                                      <entry key="foregroundImage" value="C:\Users\Samantha\Desktop\Quantifiers\images\welcome_to_quantifiers.png" />
+                                      <entry key="legacyIconShape" value="NONE" />
+                                      <entry key="outputName" value="welcome_title" />
                                     </map>
                                   </option>
                                 </PersistentState>
