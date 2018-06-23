@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/classic_mode"
+        app:srcCompat="@drawable/classic"
         tools:layout_editor_absoluteY="0dp" />
 
     <ImageView

@@ -17,4 +17,9 @@ public class GameMode extends AppCompatActivity {
         Intent gameIntent = new Intent(GameMode.this, ClassicGame.class);
         startActivity(gameIntent);
     }
+
+    public void highScores(View view){
+        Intent highScoresIntent = new Intent(GameMode.this, Highscore.class);
+        startActivity(highScoresIntent);
+    }
 }
