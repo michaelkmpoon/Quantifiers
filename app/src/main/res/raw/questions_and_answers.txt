@@ -34,5 +34,54 @@ classic
 {x ∈ ℝ | ∃y < 10}
 (-∞, ∞)
 classic
-
-
+{x ∈ ℝ | ∀y > 0, y > x}
+(-∞, 0]
+classic
+{x ∈ ℝ | ∀y > 2, y ≥ x}
+(-∞, 2]
+classic
+{x ∈ ℝ | ∀y ≥ 2, y > x}
+(-∞, 2)
+classic
+{x ∈ ℝ | ∀y < 0, x > y}
+[ 0, ∞)
+classic
+{x ∈ ℝ | ∀y < 0, x < y}
+no solution
+classic
+{x ∈ ℝ | ∀y ≤ 0, x > y}
+( 0, ∞]
+classic
+{x ∈ ℝ | ∀y > 0, x > y}
+no solution
+classic
+{x ∈ ℝ | ∀y > 0, 2x > y}
+no solution
+classic
+{x ∈ ℝ | ∃y < 0, x < y}
+(-∞, 0)
+classic
+{x ∈ ℝ | ∃y ≤ 0, x ≤ y}
+(-∞, 0]
+classic
+{x ∈ ℝ | ∃y > 1000, x < y}
+(-∞, ∞)
+classic
+{x ∈ ℝ | ∃y < 0, x ≤ y}
+(-∞, 0)
+classic
+{x ∈ ℝ | ∃y < 1, x ≤ y}
+(-∞, 1)
+classic
+{x ∈ ℝ | ∃y > 6, 2x < y}
+(-∞, 3]
+classic
+{x ∈ ℝ | ∃y > 4, 2x < y}
+(-∞, 2]
+classic
+{x ∈ ℝ | ∃y ≥ 6, 2x ≤ y}
+(-∞, 3]
+classic
+{x ∈ ℝ | ∃y ≥ 8, 2x ≤ y}
+(-∞, 4]
+classic
