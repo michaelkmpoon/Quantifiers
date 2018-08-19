@@ -109,11 +109,13 @@ public class ClassicGame extends AppCompatActivity {
             Intent newQuestionIntent = new Intent(this, ClassicGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
+            finish();
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
             endGameIntent.putExtra("qNum", questionNumber + 1);
             startActivity(endGameIntent);
+            finish();
         }
     }
 

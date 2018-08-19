@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ClassicGame">
 
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:textOff="("
+        android:textOn="{"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="352dp" />
+
     <TextView
         android:id="@+id/question"
         android:layout_width="250dp"
@@ -72,8 +83,6 @@
         android:id="@+id/leftBracket4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/numOne"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,4 +100,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/leftBracket4" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:textOff="("
+        android:textOn="{"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="352dp" />
+
 </android.support.constraint.ConstraintLayout>
