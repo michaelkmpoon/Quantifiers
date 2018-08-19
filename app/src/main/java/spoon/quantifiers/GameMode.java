@@ -15,6 +15,7 @@ public class GameMode extends AppCompatActivity {
 
     public void classicMode(View view){
         Intent gameIntent = new Intent(GameMode.this, ClassicGame.class);
+        gameIntent.putExtra("qNum", 0);
         startActivity(gameIntent);
     }
 

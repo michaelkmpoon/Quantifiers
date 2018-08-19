@@ -3,7 +3,7 @@
     <!--Main Colours-->
     <color name="black">#414141</color>
     <color name="grey">#666666</color>
-    <color name="blue">#1E90FF</color>
+    <color name="blue">#1e90ff</color>
     <color name="red">#F06449</color>
     <color name="white_background">#FAFAFA</color>
 </resources>

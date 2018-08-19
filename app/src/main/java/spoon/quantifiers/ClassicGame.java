@@ -1,9 +1,11 @@
 package spoon.quantifiers;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,6 +21,7 @@ public class ClassicGame extends AppCompatActivity {
     private static AppDatabase questionsDB;
     private TextView questionView;
     private Question nextQuestion;
+    private int questionNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class ClassicGame extends AppCompatActivity {
         setContentView(R.layout.activity_classic_game);
 
         questionView = findViewById(R.id.question);
+        questionNumber = getIntent().getExtras().getInt("qNum", 0);
 
         if(AppDatabase.INSTANCE == null) {
             questionsDB = AppDatabase.getInstance(this);
@@ -40,8 +44,7 @@ public class ClassicGame extends AppCompatActivity {
                         System.out.println(ex);
                     }
 
-                    AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
-                    warmupTask.execute(0);
+                    askQuestion();
                 }
             }).start();
         }
@@ -50,8 +53,7 @@ public class ClassicGame extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
-                    warmupTask.execute(0);
+                    askQuestion();
                 }
             }).start();
         }
@@ -59,9 +61,9 @@ public class ClassicGame extends AppCompatActivity {
 
 
     private void preloadQuestions() throws IOException {
-        String[] questions = new String [25];
-        String[] answers = new String [25];
-        System.out.println("Sami");
+        String[] questions = new String [27];
+        String[] answers = new String [27];
+        String[] type = new String [27];
         String line = null;
         BufferedReader reader = new BufferedReader (
                 new InputStreamReader(getResources().openRawResource(R.raw.questions_and_answers), "UTF-8"));
@@ -70,7 +72,8 @@ public class ClassicGame extends AppCompatActivity {
         while ((line = reader.readLine ()) != null)
         {
             questions [count] = line;
-            answers [count] = reader.readLine ();
+            answers [count] = reader.readLine();
+            type [count] = reader.readLine();
             count++;
         }
         reader.close ();
@@ -79,8 +82,38 @@ public class ClassicGame extends AppCompatActivity {
             Question newQ = new Question();
             newQ.setQuestion(questions[i]);
             newQ.setAnswer(answers[i]);
-            newQ.setQType("warmup");
+            newQ.setQType(type[i]);
             questionsDB.myDao().addQuestion(newQ);
+        }
+    }
+
+    private void askQuestion() {
+        if(questionNumber == 0) {
+            System.out.println("Got here!!");
+            AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
+            warmupTask.execute(0);
+        }
+        else if(questionNumber == 1){
+            AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
+            warmupTask.execute(1);
+        }
+        else {
+            AsyncGetRandQ randomTask = new AsyncGetRandQ(questionsDB);
+            randomTask.execute();
+        }
+    }
+
+    public void validateAnswer(View view) {
+        String userAnswer = "";
+        if(true) {
+            Intent newQuestionIntent = new Intent(this, ClassicGame.class);
+            newQuestionIntent.putExtra("qNum", questionNumber + 1);
+            startActivity(newQuestionIntent);
+        }
+        else {
+            Intent endGameIntent = new Intent(this, EndGame.class);
+            endGameIntent.putExtra("qNum", questionNumber + 1);
+            startActivity(endGameIntent);
         }
     }
 
@@ -90,7 +123,7 @@ public class ClassicGame extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private class AsyncGetWarmupQ extends AsyncTask<Integer, Void, String> {
+    private class AsyncGetWarmupQ extends AsyncTask<Integer, Void, Question> {
 
         private final AppDatabase db;
 
@@ -99,25 +132,21 @@ public class ClassicGame extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(final Integer... params) {
+        protected Question doInBackground(final Integer... params) {
             List<Question> warmups = db.myDao().getQuestionsByType("warmup");
-            String text = "";
-            System.out.println("Num of Qs: " + warmups.size());
-            if(warmups.size() > 0) {
-                for (int i = 0; i < warmups.size(); i++) {
-                    text = text + " New Q: " + warmups.get(i).getQuestion();
-                }
-                return text;
+            if(warmups.size() > 0 && params[0] <= warmups.size()) {
+                System.out.println("Size: " + warmups.size());
+                return warmups.get(params[0]);
             }
             else
-                return "";
+                return new Question();
         }
 
         @Override
-        protected void onPostExecute(String question) {
+        protected void onPostExecute(Question question) {
             super.onPostExecute(question);
-            // nextQuestion = question;
-            questionView.setText(question);
+            nextQuestion = question;
+            questionView.setText(question.getQuestion());
         }
     }
 
@@ -131,7 +160,11 @@ public class ClassicGame extends AppCompatActivity {
 
         @Override
         protected Question doInBackground(final Void... params) {
-            return db.myDao().getRandomQuestion("classic");
+            Question nextQ = db.myDao().getRandomQuestion("classic");
+            if(nextQ != null)
+                return nextQ;
+            else
+                return new Question();
         }
 
         @Override
