@@ -24,6 +24,7 @@ public class ClassicGame extends AppCompatActivity {
     private TextView questionView;
     private Question nextQuestion;
     private int questionNumber;
+    private Spinner[] answerFields;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class ClassicGame extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-
 
         if(AppDatabase.INSTANCE == null) {
             questionsDB = AppDatabase.getInstance(this);
@@ -75,7 +75,7 @@ public class ClassicGame extends AppCompatActivity {
         String[] questions = new String [27];
         String[] answers = new String [27];
         String[] type = new String [27];
-        String line = null;
+        String line;
         BufferedReader reader = new BufferedReader (
                 new InputStreamReader(getResources().openRawResource(R.raw.questions_and_answers), "UTF-8"));
         int count = 0;
@@ -116,7 +116,29 @@ public class ClassicGame extends AppCompatActivity {
 
     public void validateAnswer(View view) {
         String userAnswer = "";
-        if(true) {
+
+        for(int i = 0; i < answerFields.length; i++) {
+            userAnswer = userAnswer + answerFields[i].getSelectedItem().toString();
+            if(i == 1)
+                userAnswer = userAnswer + ", ";
+        }
+        System.out.println("Sami: " + userAnswer);
+        if(userAnswer.equals(nextQuestion.getAnswer())) {
+            Intent newQuestionIntent = new Intent(this, ClassicGame.class);
+            newQuestionIntent.putExtra("qNum", questionNumber + 1);
+            startActivity(newQuestionIntent);
+            finish();
+        }
+        else {
+            Intent endGameIntent = new Intent(this, EndGame.class);
+            endGameIntent.putExtra("qNum", questionNumber + 1);
+            startActivity(endGameIntent);
+            finish();
+        }
+    }
+
+    public void validateNoSolution(View view) {
+        if("no solution".equals(nextQuestion.getAnswer())) {
             Intent newQuestionIntent = new Intent(this, ClassicGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
