@@ -40,11 +40,11 @@ public class ClassicGame extends AppCompatActivity {
         Spinner spinner4 = (Spinner) findViewById(R.id.rightBracket);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter_numeric = ArrayAdapter.createFromResource(this,
-                R.array.numeric_array, android.R.layout.simple_spinner_item);
+                R.array.numeric_array, R.layout.custom_spinner);
         ArrayAdapter<CharSequence> adapter_leftBracket = ArrayAdapter.createFromResource(this,
-                R.array.leftBracket, android.R.layout.simple_spinner_item);
+                R.array.leftBracket, R.layout.custom_spinner);
         ArrayAdapter<CharSequence> adapter_rightBracket = ArrayAdapter.createFromResource(this,
-                R.array.rightBracket, android.R.layout.simple_spinner_item);
+                R.array.rightBracket, R.layout.custom_spinner);
         // Specify the layout to use when the list of choices appears
         adapter_numeric.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter_leftBracket.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
