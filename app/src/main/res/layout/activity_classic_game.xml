@@ -93,4 +93,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner_2"
         app:layout_constraintStart_toEndOf="@+id/numeric_spinner_2" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/red"
+        android:onClick="validateNoSolution"
+        android:text="No Solution"
+        android:textColor="@color/white_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
 </android.support.constraint.ConstraintLayout>
