@@ -24,6 +24,7 @@ public class ClassicGame extends AppCompatActivity {
     private TextView questionView;
     private Question nextQuestion;
     private int questionNumber;
+    private Spinner[] answerFields;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +33,29 @@ public class ClassicGame extends AppCompatActivity {
 
         questionView = findViewById(R.id.question);
         questionNumber = getIntent().getExtras().getInt("qNum", 0);
-        Spinner spinner = (Spinner) findViewById(R.id.numeric_spinner);
+
+        Spinner spinner1 = (Spinner) findViewById(R.id.leftBracket);
+        Spinner spinner2 = (Spinner) findViewById(R.id.numeric_spinner);
+        Spinner spinner3 = (Spinner) findViewById(R.id.numeric_spinner_2);
+        Spinner spinner4 = (Spinner) findViewById(R.id.rightBracket);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> adapter_numeric = ArrayAdapter.createFromResource(this,
                 R.array.numeric_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_leftBracket = ArrayAdapter.createFromResource(this,
+                R.array.leftBracket, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter_rightBracket = ArrayAdapter.createFromResource(this,
+                R.array.rightBracket, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_numeric.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_leftBracket.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_rightBracket.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        spinner1.setAdapter(adapter_leftBracket);
+        spinner2.setAdapter(adapter_numeric);
+        spinner3.setAdapter(adapter_numeric);
+        spinner4.setAdapter(adapter_rightBracket);
+
+        answerFields = new Spinner[] {spinner1, spinner2, spinner3, spinner4};
 
 
         if(AppDatabase.INSTANCE == null) {

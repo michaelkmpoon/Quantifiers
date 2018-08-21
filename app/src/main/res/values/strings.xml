@@ -75,4 +75,14 @@
         <item>-\u221E</item>
     </string-array>
 
+    <string-array name="leftBracket">
+        <item>[</item>
+        <item>(</item>
+    </string-array>
+
+    <string-array name="rightBracket">
+        <item>]</item>
+        <item>)</item>
+    </string-array>
+
 </resources>
