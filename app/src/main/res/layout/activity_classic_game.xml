@@ -42,6 +42,7 @@
         android:layout_marginRight="8dp"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner"
         app:layout_constraintEnd_toStartOf="@+id/numeric_spinner" />
 
@@ -53,6 +54,7 @@
         android:layout_marginRight="8dp"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/comma"
         app:layout_constraintEnd_toStartOf="@+id/comma" />
 
@@ -60,8 +62,8 @@
         android:id="@+id/comma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:text="TextView"
+        android:layout_marginTop="240dp"
+        android:text=","
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
@@ -74,6 +76,7 @@
         android:layout_marginStart="8dp"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/comma"
         app:layout_constraintStart_toEndOf="@+id/comma" />
 
@@ -86,6 +89,7 @@
         android:layout_marginStart="8dp"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner_2"
         app:layout_constraintStart_toEndOf="@+id/numeric_spinner_2" />
 
