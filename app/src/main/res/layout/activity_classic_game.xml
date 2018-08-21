@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ClassicGame">
 
-    <Switch
-        android:id="@+id/switch4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
-        android:textOff="("
-        android:textOn="{"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rightBracket" />
-
     <TextView
         android:id="@+id/question"
         android:layout_width="250dp"
@@ -45,77 +33,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/numOne"
+    <Spinner
+        android:id="@+id/leftBracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="150dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/numeric_spinner"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/leftBracket4"
-        app:layout_constraintTop_toBottomOf="@+id/question" />
-
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/numeric_spinner" />
 
     <Spinner
         android:id="@+id/numeric_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
-        app:layout_constraintEnd_toStartOf="@+id/rightBracket"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/numOne"
-        app:layout_constraintTop_toTopOf="@+id/numOne" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/comma"
+        app:layout_constraintEnd_toStartOf="@+id/comma" />
 
     <TextView
-        android:id="@+id/rightBracket"
+        android:id="@+id/comma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/numeric_spinner"
-        app:layout_constraintTop_toTopOf="@+id/numeric_spinner" />
-
-    <TextView
-        android:id="@+id/leftBracket4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/numOne"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/leftBracket2"
-        app:layout_constraintTop_toTopOf="@+id/numOne" />
-
-    <TextView
-        android:id="@+id/leftBracket2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/leftBracket4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/leftBracket4" />
+        app:layout_constraintTop_toBottomOf="@+id/question" />
 
-    <Switch
-        android:id="@+id/switch1"
+    <Spinner
+        android:id="@+id/numeric_spinner_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textOff="("
-        android:textOn="{"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leftBracket2" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/comma"
+        app:layout_constraintStart_toEndOf="@+id/comma" />
+
+
+    <Spinner
+        android:id="@+id/rightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner_2"
+        app:layout_constraintStart_toEndOf="@+id/numeric_spinner_2" />
 
 </android.support.constraint.ConstraintLayout>
