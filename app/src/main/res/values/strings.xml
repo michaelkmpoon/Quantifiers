@@ -6,6 +6,8 @@
     <string name="title_home_welcome">Welcome to QU\u2200NTIFI\u2203RS</string>
     <string name="button_to_instructions">How To Play</string>
     <string name="button_to_game_modes">Game Modes</string>
+    <string name="submit">SUBMIT</string>
+    <string name="no_solution">NO SOLUTION</string>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
