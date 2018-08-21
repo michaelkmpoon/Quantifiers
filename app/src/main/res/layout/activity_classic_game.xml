@@ -23,17 +23,20 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="75dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
         android:background="@color/blue"
         android:onClick="validateAnswer"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textColor="@color/white_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
 
     <Spinner
         android:id="@+id/leftBracket"
@@ -44,6 +47,7 @@
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
         android:background="@null"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner"
         app:layout_constraintEnd_toStartOf="@+id/numeric_spinner" />
 
@@ -56,6 +60,7 @@
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
         android:background="@null"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/comma"
         app:layout_constraintEnd_toStartOf="@+id/comma" />
 
@@ -78,6 +83,7 @@
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
         android:background="@null"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/comma"
         app:layout_constraintStart_toEndOf="@+id/comma" />
 
@@ -85,25 +91,29 @@
     <Spinner
         android:id="@+id/rightBracket"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:background="@null"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
-        android:background="@null"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner_2"
         app:layout_constraintStart_toEndOf="@+id/numeric_spinner_2" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         android:background="@color/red"
         android:onClick="validateNoSolution"
-        android:text="No Solution"
+        android:text="@string/no_solution"
         android:textColor="@color/white_background"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button" />
 
