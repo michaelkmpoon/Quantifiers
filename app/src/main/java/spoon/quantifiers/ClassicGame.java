@@ -25,6 +25,7 @@ public class ClassicGame extends AppCompatActivity {
     private Question nextQuestion;
     private int questionNumber;
     private Spinner[] answerFields;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +116,6 @@ public class ClassicGame extends AppCompatActivity {
 
     private void askQuestion() {
         if(questionNumber == 0) {
-            System.out.println("Got here!!");
             AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
             warmupTask.execute(0);
         }
@@ -137,7 +137,6 @@ public class ClassicGame extends AppCompatActivity {
             if(i == 1)
                 userAnswer = userAnswer + ", ";
         }
-        System.out.println("Sami: " + userAnswer);
         if(userAnswer.equals(nextQuestion.getAnswer())) {
             Intent newQuestionIntent = new Intent(this, ClassicGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
@@ -146,7 +145,7 @@ public class ClassicGame extends AppCompatActivity {
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
-            endGameIntent.putExtra("qNum", questionNumber + 1);
+            endGameIntent.putExtra("qNum", questionNumber);
             startActivity(endGameIntent);
             finish();
         }
@@ -161,7 +160,7 @@ public class ClassicGame extends AppCompatActivity {
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
-            endGameIntent.putExtra("qNum", questionNumber + 1);
+            endGameIntent.putExtra("qNum", questionNumber);
             startActivity(endGameIntent);
             finish();
         }
@@ -185,7 +184,6 @@ public class ClassicGame extends AppCompatActivity {
         protected Question doInBackground(final Integer... params) {
             List<Question> warmups = db.myDao().getQuestionsByType("warmup");
             if(warmups.size() > 0 && params[0] <= warmups.size()) {
-                System.out.println("Size: " + warmups.size());
                 return warmups.get(params[0]);
             }
             else
