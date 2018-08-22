@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="250dp"
+        android:layout_width="371dp"
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -18,6 +18,7 @@
         android:layout_marginTop="130dp"
         android:gravity="center"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,8 +57,8 @@
         android:id="@+id/numeric_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         android:background="@null"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
@@ -69,11 +70,13 @@
         android:id="@+id/comma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
         android:text=","
+        android:textColor="#414141"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/numeric_spinner_2"
@@ -93,8 +96,8 @@
         android:id="@+id/rightBracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
         android:background="@null"
         android:dropDownVerticalOffset="-30dp"
         android:dropDownWidth="40dp"
