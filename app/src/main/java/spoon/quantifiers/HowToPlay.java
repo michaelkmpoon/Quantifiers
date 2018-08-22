@@ -3,7 +3,9 @@ package spoon.quantifiers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
+import android.widget.TextView;
 
 public class HowToPlay extends AppCompatActivity {
 
@@ -13,13 +15,8 @@ public class HowToPlay extends AppCompatActivity {
         setContentView(R.layout.activity_how_to_play);
     }
 
-    public void goToInstructionsClassic(View view){
-        Intent classicIntent = new Intent(this, HowToPlayClassic.class);
-        startActivity(classicIntent);
-    }
-
-    public void goToInstructionsCrazy(View view){
-        Intent crazyIntent = new Intent(this, HowToPlayCrazy.class);
-        startActivity(crazyIntent);
+    public void goToQuestionStyles(View view) {
+        Intent qTypeIntent = new Intent(HowToPlay.this, QuestionStyles.class);
+        startActivity(qTypeIntent);
     }
 }

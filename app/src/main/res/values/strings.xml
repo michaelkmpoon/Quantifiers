@@ -6,8 +6,34 @@
     <string name="title_home_welcome">Welcome to QU\u2200NTIFI\u2203RS</string>
     <string name="button_to_instructions">How To Play</string>
     <string name="button_to_game_modes">Game Modes</string>
+
     <string name="submit">SUBMIT</string>
     <string name="no_solution">NO SOLUTION</string>
+
+    <!--How to Play-->
+    <string name="htp_welcome">Welcome! This tutorial will take you through
+        the basics of playing QU\u2200NTIFI\u2203RS while explaining the
+        mathematical terms you'll see in the game.</string>
+    <string name="universal">Universal Quantifier</string>
+    <string name="existential">Existential Quantifier</string>
+    <string name="forAllMeaning">Means "for all"</string>
+    <string name="forEveryMeaning">Means "for every"</string>
+    <string name="forAll">\u2200</string>
+    <string name="forEvery">\u2203</string>
+    <string name="toQuestions">LET'S SEE QUESTIONS!</string>
+
+    <!--Question Styles-->
+    <string name="setNote">SET NOTATION</string>
+    <string name="demoText2">Describes an interval of numbers using comparisons and quantifiers</string>
+    <string name="qPart1">x ∈ ℝ</string>
+    <string name="qPart2">|</string>
+    <string name="qPart3">x > 3</string>
+    <string name="xInReal">means "all x's in the real numbers"</string>
+    <string name="suchThat">means "such that"; can be read as "where"</string>
+    <string name="greaterThan">means "x is greater than 3"</string>
+    <string name="demoQ">{x ∈ ℝ | x > 3}</string>
+    <string name="readQuestion">Put together, the question reads: "the x values in the real numbers where x is greater than 3"</string>
+    <string name="toAnswer">SHOW ME THE ANSWER!!</string>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
