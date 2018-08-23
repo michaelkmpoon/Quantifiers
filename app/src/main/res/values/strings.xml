@@ -20,7 +20,7 @@
     <string name="forEveryMeaning">Means "for every"</string>
     <string name="forAll">\u2200</string>
     <string name="forEvery">\u2203</string>
-    <string name="toQuestions">LET'S SEE QUESTIONS!</string>
+    <string name="toQuestions">LET\'S SEE QUESTIONS!</string>
 
     <!--Question Styles-->
     <string name="setNote">SET NOTATION</string>
@@ -31,9 +31,12 @@
     <string name="xInReal">means "all x's in the real numbers"</string>
     <string name="suchThat">means "such that"; can be read as "where"</string>
     <string name="greaterThan">means "x is greater than 3"</string>
+    <string name="toCompleteQ">SEE THE COMPLETE QUESTION!!</string>
+
+    <!--Demo Question-->
     <string name="demoQ">{x ∈ ℝ | x > 3}</string>
     <string name="readQuestion">Put together, the question reads: "the x values in the real numbers where x is greater than 3"</string>
-    <string name="toAnswer">SHOW ME THE ANSWER!!</string>
+    <string name="toPractice">LET ME TRY!!!</string>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>

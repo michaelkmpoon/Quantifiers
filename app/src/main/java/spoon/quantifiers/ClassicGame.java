@@ -2,10 +2,14 @@ package spoon.quantifiers;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
@@ -26,6 +30,7 @@ public class ClassicGame extends AppCompatActivity {
     private int questionNumber;
     private Spinner[] answerFields;
     private int score;
+    private CountDownTimer countDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,8 @@ public class ClassicGame extends AppCompatActivity {
                 }
             }).start();
         }
+
+        startTimer();
     }
 
 
@@ -129,6 +136,29 @@ public class ClassicGame extends AppCompatActivity {
         }
     }
 
+    public void startTimer() {
+        final ClassicGame thisActivity = this;
+        final ProgressBar timerBar = findViewById(R.id.timer);
+
+        countDown = new CountDownTimer(15000, 250) {
+            @Override
+            public void onTick(long timeTilFinish) {
+                int oldProgress = timerBar.getProgress();
+                timerBar.setProgress(oldProgress + 1);
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Progress: "+ timerBar.getProgress());
+                timerBar.setProgress(timerBar.getMax());
+                Intent endGameIntent = new Intent(thisActivity, EndGame.class);
+                endGameIntent.putExtra("qNum", questionNumber);
+                startActivity(endGameIntent);
+                finish();
+            }
+        }.start();
+    }
+
     public void validateAnswer(View view) {
         String userAnswer = "";
 
@@ -141,14 +171,14 @@ public class ClassicGame extends AppCompatActivity {
             Intent newQuestionIntent = new Intent(this, ClassicGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
-            finish();
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
             endGameIntent.putExtra("qNum", questionNumber);
             startActivity(endGameIntent);
-            finish();
         }
+        countDown.cancel();
+        finish();
     }
 
     public void validateNoSolution(View view) {
@@ -156,14 +186,14 @@ public class ClassicGame extends AppCompatActivity {
             Intent newQuestionIntent = new Intent(this, ClassicGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
-            finish();
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
             endGameIntent.putExtra("qNum", questionNumber);
             startActivity(endGameIntent);
-            finish();
         }
+        countDown.cancel();
+        finish();
     }
 
     @Override
