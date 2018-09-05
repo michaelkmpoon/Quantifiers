@@ -107,7 +107,7 @@
         android:layout_marginBottom="25dp"
         android:background="@color/blue"
         android:padding="5dp"
-        android:text="@string/toAnswer"
+        android:text="Hi"
         android:textColor="@color/white_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
