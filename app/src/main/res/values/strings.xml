@@ -21,10 +21,12 @@
     <string name="forAll">\u2200</string>
     <string name="forEvery">\u2203</string>
     <string name="toQuestions">LET\'S SEE QUESTIONS!</string>
+    <string name="oneOfFour">1/4</string>
 
     <!--Question Styles-->
     <string name="setNote">SET NOTATION</string>
-    <string name="demoText2">Describes an interval of numbers using comparisons and quantifiers</string>
+    <string name="demoText2">Describes an interval of numbers using comparisons and quantifiers.
+        Examples of the pieces of set notation are shown below!</string>
     <string name="qPart1">x ∈ ℝ</string>
     <string name="qPart2">|</string>
     <string name="qPart3">x > 3</string>
@@ -32,11 +34,27 @@
     <string name="suchThat">means "such that"; can be read as "where"</string>
     <string name="greaterThan">means "x is greater than 3"</string>
     <string name="toCompleteQ">SEE THE COMPLETE QUESTION!!</string>
+    <string name="twoOfFour">2/4</string>
 
     <!--Demo Question-->
-    <string name="demoQ">{x ∈ ℝ | x > 3}</string>
+    <string name="example">EXAMPLE Q AND A</string>
+    <string name="demoQ">{x ∈ ℝ | x >= 3}</string>
     <string name="readQuestion">Put together, the question reads: "the x values in the real numbers where x is greater than 3"</string>
+    <string name="ansDescription">What numbers satisfy this? The interval answer is below!</string>
+    <string name="ans">[3, \u221E)</string>
+    <string name="squareBrackets">[ ]</string>
+    <string name="roundBrackets">( )</string>
+    <string name="squareBracketsDescription">closed bracket(s): includes the number it\'s used with in the interval </string>
+    <string name="roundBracketsDescription">open bracket(s): excludes number it\'s used with. Always use this with \u221E or -\u221E!!!</string>
     <string name="toPractice">LET ME TRY!!!</string>
+    <string name="threeOfFour">3/4</string>
+
+    <!--Try A Question-->
+    <string name="tryQuestion">HOW TO ANSWER</string>
+    <string name="trialQ">{x ∈ ℝ | x &lt;= 0}</string>
+    <string name="bracketDescription">Click the left and right brackets to choose between open and closed</string>
+    <string name="numberDescription">Click the numbers to choose from 0-9, -\u221E, and \221E</string>
+    <string name="fourOfFour">4/4</string>
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
