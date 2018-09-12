@@ -23,9 +23,9 @@
         <activity android:name=".EndGame" />
         <activity android:name=".Highscore" />
         <activity android:name=".HowToPlay" />
-        <activity android:name=".HowToPlayClassic" />
         <activity android:name=".QuestionStyles" />
-        <activity android:name=".DemoQuestion"></activity>
+        <activity android:name=".DemoQuestion" />
+        <activity android:name=".Practice"></activity>
     </application>
 
 </manifest>
