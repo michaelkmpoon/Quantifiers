@@ -1,28 +1,22 @@
 package spoon.quantifiers;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Spinner;
 import android.widget.ArrayAdapter;
-
-import org.w3c.dom.Text;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class ClassicGame extends AppCompatActivity {
+public class CrazyGame extends AppCompatActivity {
 
     private static AppDatabase questionsDB;
     private TextView questionView;
@@ -35,7 +29,7 @@ public class ClassicGame extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classic_game);
+        setContentView(R.layout.activity_crazy_mode);
 
         questionView = findViewById(R.id.question);
         questionNumber = getIntent().getExtras().getInt("qNum", 0);
@@ -93,7 +87,6 @@ public class ClassicGame extends AppCompatActivity {
         startTimer();
     }
 
-
     private void preloadQuestions() throws IOException {
         String[] questions = new String [27];
         String[] answers = new String [27];
@@ -123,24 +116,24 @@ public class ClassicGame extends AppCompatActivity {
 
     private void askQuestion() {
         if(questionNumber == 0) {
-            AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
+            CrazyGame.AsyncGetWarmupQ warmupTask = new CrazyGame.AsyncGetWarmupQ(questionsDB);
             warmupTask.execute(0);
         }
         else if(questionNumber == 1){
-            AsyncGetWarmupQ warmupTask = new AsyncGetWarmupQ(questionsDB);
+            CrazyGame.AsyncGetWarmupQ warmupTask = new CrazyGame.AsyncGetWarmupQ(questionsDB);
             warmupTask.execute(1);
         }
         else {
-            AsyncGetRandQ randomTask = new AsyncGetRandQ(questionsDB);
+            CrazyGame.AsyncGetRandQ randomTask = new CrazyGame.AsyncGetRandQ(questionsDB);
             randomTask.execute();
         }
     }
 
     public void startTimer() {
-        final ClassicGame thisActivity = this;
+        final CrazyGame thisActivity = this;
         final ProgressBar timerBar = findViewById(R.id.timer);
 
-        countDown = new CountDownTimer(20000, 250) {
+        countDown = new CountDownTimer(12500, 250) {
             @Override
             public void onTick(long timeTilFinish) {
                 int oldProgress = timerBar.getProgress();

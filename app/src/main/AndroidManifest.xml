@@ -24,7 +24,8 @@
         <activity android:name=".Highscore" />
         <activity android:name=".HowToPlay" />
         <activity android:name=".HowToPlayClassic" />
-        <activity android:name=".QuestionStyles"></activity>
+        <activity android:name=".QuestionStyles" />
+        <activity android:name=".CrazyGame"></activity>
     </application>
 
 </manifest>

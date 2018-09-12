@@ -66,7 +66,6 @@ public class EndGame extends AppCompatActivity {
         int[] newHighscores = new int[5];
         for(int index = 1; index <= 5; index++) {
             newHighscores[index - 1] = prefs.getInt("score" + index, 0);
-            System.out.println("Michael, " + newHighscores[index - 1]);
         }
 
 //        try {

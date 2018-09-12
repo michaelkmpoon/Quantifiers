@@ -16,7 +16,14 @@ public class GameMode extends AppCompatActivity {
     public void classicMode(View view){
         Intent gameIntent = new Intent(GameMode.this, ClassicGame.class);
         gameIntent.putExtra("qNum", 0);
+        gameIntent.putExtra("time", "20000");
         startActivity(gameIntent);
+    }
+
+    public void crazyMode(View view) {
+        Intent gameIntent = new Intent(GameMode.this, ClassicGame.class);
+        gameIntent.putExtra("qNum", 0);
+        gameIntent.putExtra("time", "12500");
     }
 
     public void highScores(View view){

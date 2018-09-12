@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/highscore5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -78,7 +78,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:text="@string/universal"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView6" />
 
@@ -90,7 +90,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="@string/existential"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent" />
 
