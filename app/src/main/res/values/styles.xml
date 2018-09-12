@@ -3,4 +3,8 @@
     <!-- Base application theme. -->
     <style name="Theme.AppTheme.Light.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
 
+    <style name="QuantifierTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="QuantifierTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
