@@ -146,6 +146,7 @@ public class CrazyGame extends AppCompatActivity {
                 timerBar.setProgress(timerBar.getMax());
                 Intent endGameIntent = new Intent(thisActivity, EndGame.class);
                 endGameIntent.putExtra("qNum", questionNumber);
+                endGameIntent.putExtra("mode", 1);
                 startActivity(endGameIntent);
                 finish();
             }
