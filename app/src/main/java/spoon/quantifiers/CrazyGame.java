@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
@@ -23,13 +24,12 @@ public class CrazyGame extends AppCompatActivity {
     private Question nextQuestion;
     private int questionNumber;
     private Spinner[] answerFields;
-    private int score;
     private CountDownTimer countDown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crazy_mode);
+        setContentView(R.layout.activity_crazy_game);
 
         questionView = findViewById(R.id.question);
         questionNumber = getIntent().getExtras().getInt("qNum", 0);
@@ -152,7 +152,7 @@ public class CrazyGame extends AppCompatActivity {
         }.start();
     }
 
-    public void validateAnswer(View view) {
+    public void crazyValidateAnswer(View view) {
         String userAnswer = "";
 
         for(int i = 0; i < answerFields.length; i++) {
@@ -161,28 +161,30 @@ public class CrazyGame extends AppCompatActivity {
                 userAnswer = userAnswer + ", ";
         }
         if(userAnswer.equals(nextQuestion.getAnswer())) {
-            Intent newQuestionIntent = new Intent(this, ClassicGame.class);
+            Intent newQuestionIntent = new Intent(this, CrazyGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
             endGameIntent.putExtra("qNum", questionNumber);
+            endGameIntent.putExtra("mode", 1);
             startActivity(endGameIntent);
         }
         countDown.cancel();
         finish();
     }
 
-    public void validateNoSolution(View view) {
+    public void crazyValidateNoSolution(View view) {
         if("no solution".equals(nextQuestion.getAnswer())) {
-            Intent newQuestionIntent = new Intent(this, ClassicGame.class);
+            Intent newQuestionIntent = new Intent(this, CrazyGame.class);
             newQuestionIntent.putExtra("qNum", questionNumber + 1);
             startActivity(newQuestionIntent);
         }
         else {
             Intent endGameIntent = new Intent(this, EndGame.class);
             endGameIntent.putExtra("qNum", questionNumber);
+            endGameIntent.putExtra("mode", 1);
             startActivity(endGameIntent);
         }
         countDown.cancel();
@@ -244,5 +246,16 @@ public class CrazyGame extends AppCompatActivity {
             nextQuestion = nextQ;
             questionView.setText(nextQuestion.getQuestion());
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            countDown.cancel();
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

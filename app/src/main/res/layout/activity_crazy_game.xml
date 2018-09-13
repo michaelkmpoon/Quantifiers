@@ -6,4 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".CrazyGame">
 
+    <ProgressBar
+        android:id="@+id/timer"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/white_background"
+        android:max="50"
+        android:progress="0"
+        android:progressTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="371dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/blue"
+        android:onClick="crazyValidateAnswer"
+        android:text="@string/submit"
+        android:textColor="@color/white_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/noSolutionButton" />
+
+    <Spinner
+        android:id="@+id/leftBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@null"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/numeric_spinner" />
+
+    <Spinner
+        android:id="@+id/numeric_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@null"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/comma"
+        app:layout_constraintEnd_toStartOf="@+id/comma" />
+
+    <TextView
+        android:id="@+id/comma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text=","
+        android:textColor="#414141"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/noSolutionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/numeric_spinner_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@null"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/comma"
+        app:layout_constraintStart_toEndOf="@+id/comma" />
+
+
+    <Spinner
+        android:id="@+id/rightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:background="@null"
+        android:dropDownVerticalOffset="-30dp"
+        android:dropDownWidth="40dp"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/numeric_spinner_2"
+        app:layout_constraintStart_toEndOf="@+id/numeric_spinner_2" />
+
+    <Button
+        android:id="@+id/noSolutionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/red"
+        android:onClick="crazyValidateNoSolution"
+        android:text="@string/no_solution"
+        android:textColor="@color/white_background"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Write the following set in interval notation:"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer" />
+
 </android.support.constraint.ConstraintLayout>

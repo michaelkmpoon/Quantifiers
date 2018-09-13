@@ -20,6 +20,7 @@
         <activity android:name=".Home" />
         <activity android:name=".GameMode" />
         <activity android:name=".ClassicGame" />
+        <activity android:name=".CrazyGame" />
         <activity android:name=".EndGame" />
         <activity android:name=".Highscore" />
         <activity android:name=".HowToPlay" />

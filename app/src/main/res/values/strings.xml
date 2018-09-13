@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quantifiers</string>
+    <string name="app_name">QU\u2200NTIFI\u2203RS!</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Title Screen -->
@@ -12,9 +12,8 @@
 
     <!--How to Play-->
     <string name="howPlay">HOW TO PLAY</string>
-    <string name="htp_welcome">Welcome! This tutorial will take you through
-        the basics of playing QU\u2200NTIFI\u2203RS while explaining the
-        mathematical terms you'll see in the game.</string>
+    <string name="htp_welcome">Welcome! This tutorial will explain the basics of playing
+        QU\u2200NTIFI\u2203RS and the mathematical terms you\'ll see in the game.</string>
     <string name="universal">Universal Quantifier</string>
     <string name="existential">Existential Quantifier</string>
     <string name="forAllMeaning">Means "for all"</string>
@@ -22,7 +21,6 @@
     <string name="forAll">\u2200</string>
     <string name="forEvery">\u2203</string>
     <string name="toQuestions">LET\'S SEE THE QUESTION FORMAT!</string>
-    <string name="oneOfFour">1/4</string>
 
     <!--Question Styles-->
     <string name="setNote">SET NOTATION</string>
@@ -35,11 +33,10 @@
     <string name="suchThat">means "such that"; can be read as "where"</string>
     <string name="greaterThan">means "x is greater than 3"</string>
     <string name="toCompleteQ">SEE THE COMPLETE QUESTION!!</string>
-    <string name="twoOfFour">2/4</string>
 
     <!--Demo Question-->
     <string name="example">EXAMPLE Q AND A</string>
-    <string name="demoQ">{x ∈ ℝ | x >= 3}</string>
+    <string name="demoQ">{x ∈ ℝ | x \u2265 3}</string>
     <string name="readQuestion">Put together, the question reads: "the x values in the real numbers where x is greater than 3"</string>
     <string name="ansDescription">What numbers satisfy this? The interval answer is below!</string>
     <string name="ans">[3, \u221E)</string>
@@ -53,7 +50,7 @@
     <!--Try A Question-->
     <string name="tryQuestion">HOW TO ANSWER</string>
     <string name="practice">PRACTICE QUESTION: </string>
-    <string name="trialQ">{x ∈ ℝ | x &lt;= 0}</string>
+    <string name="trialQ">{x ∈ ℝ | x \u2264 0}</string>
     <string name="bracketDescription">Click the left and right brackets to choose between open and closed</string>
     <string name="numberDescription">Click the numbers to choose from 0-9, -\u221E, and \u221E</string>
     <string name="answer">YOUR ANSWER BELOW: </string>
