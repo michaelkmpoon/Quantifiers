@@ -18,7 +18,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:background="@color/white_background"
-        android:max="60"
+        android:max="80"
         android:progress="0"
         android:progressTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
